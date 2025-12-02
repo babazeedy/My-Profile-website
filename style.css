@@ -1,0 +1,505 @@
+/* Global Resets & Base Styles */
+:root {
+    /* Define your color palette here for easy changes */
+    --primary-color: #0056b3; /* Dark Blue */
+    --secondary-color: #e0f2f7; /* Light Blue */
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --dark-bg: #343a40;
+    --white: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic Resets & Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Example font */
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed for your desired content width */
+    margin: 0 auto;    /* Centers the container horizontally */
+    padding: 0 20px;   /* Adds padding on the sides for smaller screens */
+}
+
+/* Header Styling */
+header {
+    background-color: #ffffff; /* White background for the header */
+    padding: 15px 0; /* Vertical padding */
+    border-bottom: 1px solid #eee; /* Subtle bottom border */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Light shadow */
+}
+
+header .container {
+    display: flex; /* Enables flexbox on the container inside the header */
+    justify-content: space-between; /* Pushes logo to one end and nav to the other */
+    align-items: center; /* Vertically aligns items in the center */
+}
+
+.logo a {
+    font-size: 24px; /* Size of your site title */
+    font-weight: bold;
+    color: #333; /* Color of your site title */
+    text-decoration: none; /* Remove underline */
+}
+
+/* Navigation Styling */
+nav ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Makes list items display horizontally */
+}
+
+nav ul li {
+    margin-left: 25px; /* Space between navigation items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #555; /* Default link color */
+    font-weight: 500;
+    font-size: 17px;
+    padding: 5px 0; /* Adds some vertical padding for click area */
+    transition: color 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    color: #007bff; /* Color on hover/focus (e.g., a blue) */
+}
+
+/* Hero Section Styling (just for basic visibility) */
+.hero-section {
+    background-color: #f0f8ff; /* Light blue background for hero */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 4em; /* Adjust as needed */
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.hero-content h2 {
+    font-size: 2em;
+    color: #34495e;
+}
+
+.hero-content .highlight {
+    color: #007bff; /* Example highlight color */
+}
+
+.hero-content .tagline {
+    font-size: 1.2em;
+    color: #7f8c8d;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid transparent; /* For consistent size */
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+    margin-right: 15px;
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.secondary-btn {
+    background-color: transparent;
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+.secondary-btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.small-btn {
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+.large-btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+/* About Section */
+#about .about-flex {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    align-items: center;
+    justify-content: center; /* Center items when wrapped */
+    gap: 40px; /* Space between image and text */
+}
+
+#about .about-image {
+    flex: 1; /* Allow image to grow/shrink */
+    min-width: 250px; /* Minimum width before wrapping */
+    max-width: 350px; /* Max width for image container */
+    text-align: center;
+}
+
+#about .about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Circular image */
+    border: 5px solid var(--primary-color); /* A border around the image */
+    box-shadow: 0 8px 16px var(--shadow-color);
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center image if container is larger */
+}
+
+#about .about-text {
+    flex: 2; /* Allow text to take more space */
+    min-width: 300px; /* Minimum width before wrapping */
+    max-width: 700px;
+}
+
+#about .about-text h2 {
+    text-align: left; /* Align text heading left */
+    margin-bottom: 20px;
+}
+
+/* Skills Section */
+#skills {
+    background-color: var(--light-bg); /* Light background for this section */
+}
+
+#skills .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between skill cards */
+}
+
+#skills .skill-category {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#skills .skill-category:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+}
+
+#skills .skill-category h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+#skills .skill-category ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills .skill-category ul li {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: var(--text-color);
+}
+
+/* Portfolio Section */
+#portfolio .section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1em;
+}
+
+#portfolio .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#portfolio .project-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    overflow: hidden; /* Ensures image corners are rounded */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#portfolio .project-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#portfolio .project-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent card size */
+    object-fit: cover; /* Crop image to fit */
+    display: block;
+}
+
+#portfolio .project-card h3 {
+    padding: 20px 20px 10px;
+    font-size: 1.4em;
+    margin-bottom: 0; /* Adjust margin */
+}
+
+#portfolio .project-card .project-description {
+    padding: 0 20px 15px;
+    font-size: 0.95em;
+    margin-bottom: 0; /* Remove default paragraph margin */
+    text-align: center; /* Align project description left */
+}
+
+#portfolio .project-card .project-tech {
+    padding: 0 20px 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: flex-start; /* Align tech tags to start */
+}
+
+#portfolio .project-card .project-tech span {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+#portfolio .project-card .btn {
+    margin: 0 20px 20px; /* Adjust button margin within card */
+    width: calc(100% - 40px); /* Make button full width of card content area */
+    text-align: center;
+}
+
+.view-more {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Insights Section */
+#insights {
+    background-color: var(--light-bg); /* Light background */
+}
+
+#insights .section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px;
+    font-size: 1.1em;
+}
+
+#insights .insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+#insights .insight-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#insights .insight-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+#insights .insight-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+#insights .insight-card h3 a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+#insights .insight-card h3 a:hover {
+    text-decoration: underline;
+}
+
+#insights .insight-card p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* Contact Section */
+#contact .section-description {
+    max-width: 700px;
+    margin: 0 auto 40px;
+    font-size: 1.1em;
+}
+
+#contact .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px; /* Space between contact buttons */
+    margin-bottom: 40px;
+}
+
+#contact .contact-links .btn {
+    display: flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .contact-links .btn i {
+    margin-right: 10px; /* Space between icon and text */
+}
+
+#contact .social-links {
+    margin-top: 30px;
+}
+
+#contact .social-links a {
+    font-size: 2.2em; /* Size of social icons */
+    margin: 0 15px;
+    color: var(--primary-color);
+    transition: color 0.3s ease-in-out;
+}
+
+#contact .social-links a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-bg);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+```css
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 { font-size: 2.8em; }
+    h2 { font-size: 2em; }
+    h3 { font-size: 1.6em; }
+
+    section {
+        padding: 60px 0;
+    }
+
+    #hero {
+        min-height: 80vh; /* Adjust hero height for smaller screens */
+    }
+
+    #hero nav {
+        flex-direction: column; /* Stack nav items */
+        padding: 10px;
+        width: 90%;
+    }
+
+    #hero nav ul {
+        flex-direction: column; /* Stack nav links */
+        margin-top: 10px;
+    }
+
+    #hero nav ul li {
+        margin: 5px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .hero-content .tagline {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .primary-btn {
+        margin-right: 0; /* Remove margin on small screens */
+        margin-bottom: 15px; /* Add bottom margin if stacked */
+    }
+
+    #about .about-flex {
+        flex-direction: column; /* Stack image and text */
+    }
+
+    #about .about-image {
+        margin-bottom: 30px; /* Add space below image */
+    }
+
+    #about .about-text h2 {
+        text-align: center; /* Center text heading */
+    }
+
+    #skills .skills-grid,
+    #portfolio .project-grid,
+    #insights .insight-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    #portfolio .project-card .btn {
+        width: auto; /* Allow button to size naturally */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 { font-size: 2.2em; }
+    h2 { font-size: 1.8em; }
+
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content h2 {
+        font-size: 1.5em;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .large-btn {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+
+    #contact .contact-links .btn {
+        width: 100%; /* Full width buttons */
+    }
+}
+```
